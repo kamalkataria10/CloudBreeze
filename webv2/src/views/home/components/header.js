@@ -10,7 +10,7 @@ const Header = () => {
   
         <a href="/" className="logo d-flex align-items-center">
           <img src={logo} alt="" />
-          <span>BlueCloud</span>
+          <span>CloudBreeze</span>
         </a>
   
         <nav id="navbar" className="navbar">

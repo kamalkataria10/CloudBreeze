@@ -16,7 +16,7 @@ export function TechStack() {
 
         <header className="section-header">
           <h2>Tech Stack</h2>
-          <p>Technologies used by BlueCloud</p>
+          <p>Technologies used by CloudBreeze</p>
         </header>
 
         <div className="clients-slider swiper">

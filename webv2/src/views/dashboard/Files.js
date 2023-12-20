@@ -202,7 +202,7 @@ const Files = () => {
             <DialogTitle>Download with Private key 🔒</DialogTitle>
             <DialogContent>
             <DialogContentText>
-                BlueCloud access for this file has been revoked. Please enter the private key to decrypt and download the file.
+                CloudBreeze access for this file has been revoked. Please enter the private key to decrypt and download the file.
             </DialogContentText>
             <br/>
             <TextField

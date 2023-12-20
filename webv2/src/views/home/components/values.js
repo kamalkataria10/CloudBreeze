@@ -27,7 +27,7 @@ export function Values() {
             <div className="box">
               <img src={value2} className="img-fluid" alt="" />
               <h3>100% Transparency</h3>
-              <p>At BlueCloud, transparency is at the heart of our commitment, ensuring you have a clear view of your data's journey and security every step of the way.</p>
+              <p>At CloudBreeze, transparency is at the heart of our commitment, ensuring you have a clear view of your data's journey and security every step of the way.</p>
             </div>
           </div>
 

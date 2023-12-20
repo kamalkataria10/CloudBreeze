@@ -48,7 +48,7 @@ const Login2 = () => {
                 subtitle={
                   <Stack direction="row" spacing={1} justifyContent="center" mt={3}>
                     <Typography color="textSecondary" variant="h6" fontWeight="500">
-                      New to Bluecloud?
+                      New to CloudBreeze?
                     </Typography>
                     <Typography
                       component={Link}

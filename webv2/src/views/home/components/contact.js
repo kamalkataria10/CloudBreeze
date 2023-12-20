@@ -15,20 +15,11 @@ export function Contact() {
   
               <div className="row gy-4">
                 <div className="col-md-6">
-                  <a href="https://github.com/yatharthagoenka" target="_blank">
+                  <a href="https://github.com/kamalkataria10" target="_blank">
                   <div className="info-box">
                     <i className="bi bi-github"></i>
                     <h3>GitHub</h3>
-                    <p>yatharthagoenka</p>
-                  </div>
-                  </a>
-                </div>
-                <div className="col-md-6">
-                  <a href="https://www.linkedin.com/in/yatharthagoenka" target="_blank">
-                  <div className="info-box">
-                    <i className="bi bi-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p>Yathartha Goenka</p>
+                    <p>Kamal Kataria</p>
                   </div>
                   </a>
                 </div>
@@ -36,17 +27,9 @@ export function Contact() {
                   <div className="info-box">
                     <i className="bi bi-envelope"></i>
                     <h3>Email Us</h3>
-                    <p>goenkayathartha2002@gmail.com<br/>20bcs248@iiitdmj.ac.in</p>
+                  <p>kamalkataria77@gmail.com<br />
+                  </p>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <a href="https://yatharthagoenka.notion.site/yatharthagoenka/Yathartha-Goenka-2203293698e54e5d81b9215ab62559d0" target="_blank">
-                  <div className="info-box">
-                    <i className="bi bi-pen"></i>
-                    <h3>Portfolio</h3>
-                    <p>Know more about my profile/contributions</p>
-                  </div>
-                  </a>
                 </div>
               </div>
   

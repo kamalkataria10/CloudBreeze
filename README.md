@@ -1,4 +1,4 @@
-# BlueCloud 
+# CloudBreeze
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
@@ -18,21 +18,26 @@ Check it out [here 🔗](http://3.104.70.53/)
 
 <img src="webv2\public\landing-page.png" align="left" width="450" hspace="10" vspace="10">
 
-BlueCloud is a cryptography-based cloud storage platform that allows users to upload, store, and share files securely. The application provides users with a simple and intuitive interface to manage their files. Users can upload files, view, download, and share files with others. The application also provides features such as user authentication and authorization and file permissions. With BlueCloud, users can access their files from anywhere and on any device, making it a convenient and reliable solution for managing files in the cloud. 
+CloudBreeze represents an advanced cloud storage platform fortified by cryptography, ensuring a secure environment for uploading, storing, and sharing files. This user-centric application offers an intuitive interface for effortless file management, empowering users to seamlessly upload, view, download, and share files with others.
 
-The application is built as using the microservices architecture, deployed over `AWS` using the following technologies:
+Notable functionalities include robust user authentication and authorization mechanisms alongside comprehensive file permission settings. CloudBreeze ensures accessibility to files from any location or device, establishing itself as a dependable solution for efficient cloud-based file management.
+
+Employing the microservices architecture, CloudBreeze is meticulously constructed and deployed on AWS, leveraging cutting-edge technologies such as:
+
 - Backend
+
   - <img alt="NestJS" src="https://img.shields.io/badge/NestJS-•-orange" />
   - <img alt="Typescript" src="https://img.shields.io/badge/TS/JS-•-pink" />
   - <img alt="Flask" src="https://img.shields.io/badge/Flask-•-brown" />
   - <img alt="PASSPORT" src="https://img.shields.io/badge/Passport-•-yellow" />
-  - <img alt="JWT" src="https://img.shields.io/badge/JWT-•-peach" /> 
-  - <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-•-green" /> 
+  - <img alt="JWT" src="https://img.shields.io/badge/JWT-•-peach" />
+  - <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-•-green" />
   - <img alt="Winston" src="https://img.shields.io/badge/Winston-•-yellow" />
 
 - Frontend
+
   - <img alt="ReactJS" src="https://img.shields.io/badge/ReactJS-•-red" />
-  - <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-•-black" /> 
+  - <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-•-black" />
   - <img alt="Axios" src="https://img.shields.io/badge/Axios-•-orange" />
   - <img alt="MUI" src="https://img.shields.io/badge/MUI-•-brown" />
   - <img alt="apex" src="https://img.shields.io/badge/ApexCharts-•-violet" />
@@ -45,70 +50,71 @@ The application is built as using the microservices architecture, deployed over 
 <br>
 
 ## Main features
-- Microservices architecture
-- Secure files storage using Hybrid Cryptography
-  - Divides the file into fixed-sized chunks (aka `gems`)
-  - Uses symmetric cryptographic algorithms like `AES, ChaCha, AESGCM, AESCCM` to encrypt each chunk individually before storing in memory
-  - Encrypts the keys as an additional security method using RSA
-  - The asymmetric key is either stored in the DB or given to the user.
-  - Should the user request the key, it is irreversibly deleted from the DB, giving the user sole access to the file.
-- File sharing (under progress)
-  - Grant priviledges to users
-  - Share without using up any extra memory
-- Global access
-- Horizontally scalable
-- Load balancer
-- Containerized
-- Authentication
-- Authorization
-- REST API for provisioning requests
+
+-Implementing a Microservices Architecture
+-Ensuring Secure File Storage via Hybrid Cryptography
+-Segmentation of files into consistent-sized fragments, termed as 'gems'
+-Application of symmetric cryptographic techniques such as AES, ChaCha, AESGCM, AESCCM for individual encryption of each fragment before storage
+-Encryption of keys using RSA as an additional security layer
+-Storage of asymmetric keys either within the database or provisioned to the user
+-Upon user's key request, irreversible deletion from the database, granting exclusive file access to the user
+-Ongoing Development of File Sharing Capabilities
+-User privilege assignment for file access
+-Facilitating sharing without consuming additional memory
+-Ensuring Global Accessibility
+-Enabling Horizontal Scalability
+-Integration of Load Balancing Mechanisms
+-Containerization of Services
+-Implementation of Authentication Measures
+-Enforcement of Authorization Protocols
+-Provisioning REST API for Request Handling
 
 <br>
 
-### Scope for development
-- Grant user the right to define the level of security to be imposed on each file
-  - Provide control of gem size
-  - Allowing the user to choose which algorithms to use
-  - Option between a user-defined password or an asymmetric key for encryption of the key string
-
-
 ## Setting up the application:
 
-- Create a network to run all instances on: 
+- Create a network to run all instances on:
+
 ```
 docker network ls                       ---> List all networks
 docker network inspect <network_id>     ---> Inspect a network
 
 docker network create bcloud-net
 ```
+
 - Create volume for store
+
 ```
 docker volume create store-vol --opt type=none --opt device=/path/to/store --opt o=bind
 ```
 
-- To automatically update node modules to latest versions, run the following commands in root directory of project: 
+- To automatically update node modules to latest versions, run the following commands in root directory of project:
+
 ```
 npm install -g npm-check-updates
 ncu -u
 ```
+
 - <local_port> : <container_port>
-- To run the containers, use the following command: 
+- To run the containers, use the following command:
 
 ```
 docker-compose up -d
 ```
+
 > Note: `-d flag` is used to run the container in background
 
 - This will start two app container instances, one db instance and an Nginx container acting as a load balancer for the two NestJS app containers. The configuration maps port 3000 of the host machine to the ports 3001 and 3002 which are in turn connected to the same ports of each app instances' docker containers, so we can access the load balancer by navigating to http://<ip_address>:<port> in your web browser.
 
 > If the NestJS applications fail to connect with the mongodb service inside the containers, try disabling your system firewall using:
+
 ```
 sudo ufw disable
 ```
 
 <br>
 
-- To stop the containers, use the following command: 
+- To stop the containers, use the following command:
 
 ```
 docker-compose stop
@@ -117,13 +123,14 @@ docker-compose down       ---> removes containers altogether
 ```
 
 - Check all running containers/images:
+
 ```
 docker ps -a
 
 docker images
 ```
 
-## Configuring nginx 
+## Configuring nginx
 
 - To change the protocol for load-balancing between the server instances, add one of the methods in the `upstream` block of [nginx.conf](load-balancer/nginx.conf) file.
 
@@ -143,15 +150,15 @@ http {
 ```
 
 - Options:
-    - round_robin (Default)
-    - least_conn
-    - ip_hash
-    - least_time
+  - round_robin (Default)
+  - least_conn
+  - ip_hash
+  - least_time
 
 ## Restarting mongod in case of crash
 
 ```
-sudo chown -R mongodb:mongodb /var/lib/mongodb 
+sudo chown -R mongodb:mongodb /var/lib/mongodb
 sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
 service mongod start
 ```
